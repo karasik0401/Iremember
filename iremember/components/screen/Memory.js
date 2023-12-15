@@ -6,16 +6,17 @@ import {
 import React from 'react';
 import { Stack, IconButton } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import Memory_post from '../widget/Memory_post';
 
 
-function Memory({ route }) {
+function Memory({ navigation }) {
     const [number, onChangeNumber] = React.useState('');
   
     return (
         <View style={styles.container}>
-            <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
+            
               <View style={styles.header}>
-              <IconButton style={styles.icon_footer}  icon={props => <Icon  name="arrow-left" {...props} color="#06648E"/>} />
+              <IconButton style={styles.icon_footer} onPress={() => navigation.navigate('Home_page')} icon={props => <Icon  name="arrow-left" {...props} color="#06648E"/>} />
               <Text style={styles.title}>Пикник у озера</Text>
               <IconButton style={styles.icon_footer}  icon={props => <Icon  name="trash-can-outline" {...props} color="#06648E"/>} />
               </View>
@@ -23,46 +24,11 @@ function Memory({ route }) {
                 <Text style={styles.title_min}>г. Москва, Парк Кузьминки</Text>
                 <Text style={styles.title_min}>20.07.2023</Text>
               </View>
+              <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
-              <Text style={styles.text}>Волшебство пикника на берегу озера: отдых, романтика и веселье в одном месте </Text>
-
-              <Image
-                style={styles.img}
-                source={{
-                  uri: 'https://i.pinimg.com/564x/9d/37/17/9d371724897fc1b7e739932fc45ca60c.jpg',
-                }}
-              />
-
-              <Text style={styles.text}>Мы приготовили много вкусной еды, которую принесли с собой: бутерброды, салаты, фрукты и напитки.</Text>
-
-              <View style={styles.members_column}>
-                <View style={styles.members_row}>
-
-                <Image
-                  style={styles.img_members}
-                  source={{
-                    uri: 'https://i.pinimg.com/564x/3e/57/ce/3e57ce7fc575fba54c197e6f8307c228.jpg',
-                  }}
-                />
-
-                <Text style={styles.name}>Васильев Юрий</Text>
-                </View>
-
-                <View style={styles.members_row}>
-
-                <Image
-                  style={styles.img_members}
-                  source={{
-                    uri: 'https://i.pinimg.com/564x/9d/37/17/9d371724897fc1b7e739932fc45ca60c.jpg',
-                  }}
-                />
-
-                <Text style={styles.name}>Яковлева Юля</Text>
-                </View>
-
-
-                
-              </View>
+              <Memory_post/>
+              <Memory_post/>
+              <Memory_post/>
             </ScrollView>
             
 
@@ -123,7 +89,6 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        marginBottom: 16,
       },
       
       members_row:{
