@@ -1,9 +1,10 @@
 import {
     StyleSheet,
     Text,
-    View, ScrollView, Image, Button,FlatList, Alert, TextInput, Pressable, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, TouchableOpacity
+    View, ScrollView, SafeAreaView,  Image, Button,FlatList, Alert, TextInput, Pressable, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, TouchableOpacity
   } from 'react-native';
   import React from 'react';
+  import { Feather, Entypo } from "@expo/vector-icons";
   import { Stack, IconButton } from "@react-native-material/core";
   import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import Memory_card from '../widget/Memory_card';
@@ -21,6 +22,22 @@ import Memory_card from '../widget/Memory_card';
                   <Text style={styles.title}>Мои воспоминания</Text>
                 </View>
               </View>
+              <SafeAreaView >
+            <Feather
+                name="search"
+                size={20}
+                color='#ccc'
+                style={{ marginLeft: 30,
+                marginBottom: -35,
+                marginTop: 16,
+                zIndex: 1, }}
+                />
+                <TextInput placeholder='Поиск' clearButtonMode='always'
+                        style={styles.search}
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        />
+            </SafeAreaView>
               <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
               <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Memory')}>
                 <Memory_card/>
@@ -54,6 +71,20 @@ import Memory_card from '../widget/Memory_card';
         card:{
           alignSelf: "center",
           marginTop:16
+        },
+
+        search:{
+          width:354,
+          height:32,
+          borderWidth:2,
+          borderColor: '#ccc',
+          borderRadius:16,
+          marginTop:8,
+          marginBottom: 8,
+          alignSelf:"center",
+          backgroundColor: "#fff",
+          paddingLeft: 35,
+      
         },
   
         header:{

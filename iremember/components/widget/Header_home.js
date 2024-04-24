@@ -4,34 +4,22 @@ import {
     View, ScrollView, Modal, Image, Button,FlatList, Alert, TextInput, Pressable, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, TouchableOpacity
   } from 'react-native';
   import React, {useState} from 'react';
-  import MapView from 'react-native-maps';
   import { Stack, IconButton } from "@react-native-material/core";
   import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-  import Header_home from '../widget/Header_home';
-  import Btn from '../widget/Btn';
   
   
-  function Home_page({ navigation }) {
+  function Header_home({ navigation }) {
       const [number, onChangeNumber] = React.useState('');
       const [modalVisible, setModalVisible] = useState(false);
       return (
           <View style={styles.container}>
-           
-            <Header_home navigation={navigation} style={styles.header}/>
-            
-               
-            <MapView style={styles.map} />
-
-            
-            <TouchableOpacity onPress={() => navigation.navigate('Memory')}>
-                <Image
-                    style={styles.photo}
-                    source={require('../../logo/mark.png')}
-                />
-            </TouchableOpacity>
-      
-            <Btn/>
-                  
+            <View style={styles.header}>
+                <TouchableOpacity onPress={() => navigation.navigate('Root', { screen: 'Profile' })}>
+                    <View style={styles.profile}></View>
+                </TouchableOpacity>
+                
+                <IconButton style={styles.btn}  onPress={() => navigation.navigate('AddMemory')} icon={props => <Icon  name="plus" {...props} color="#FEFEFE"/>} />
+            </View>                    
           </View>
 
           
@@ -41,21 +29,11 @@ import {
   
   const styles = StyleSheet.create({
       container: {
-          height: '100%',
-          
-      
+        zIndex:1,
+        position: "absolute",
+        marginTop:61,
         },
 
-        map: {
-            zIndex: 0,
-            width: '100%',
-            height: '100%',
-          },
-
-        photo:{
-            marginTop:-300,
-            marginLeft:160,
-        },
         btn:{
             backgroundColor: '#06648E',
             height: 44,
@@ -78,23 +56,13 @@ import {
             flexDirection: 'row',
             justifyContent:'space-between',
             zIndex:1,
-            marginTop: 200,
             width: 390,
             alignItems: 'flex-start'
         },
-        stretch:{
-            position: 'absolute',
-            zIndex:0,
-        },
-        centeredView: {
 
-          },
-          icon:{
-            marginHorizontal:6
-          },
         
           
         
   })
   
-  export default Home_page
+  export default Header_home

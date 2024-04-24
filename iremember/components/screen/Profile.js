@@ -47,15 +47,15 @@ function Profile({ navigation }) {
             <Text style={styles.btn_text}>Редактировать профиль</Text>
             </Pressable>
 
-            <Pressable style={styles.btn} onPress={() => navigation.navigate('Friends')}>
-            <Text style={styles.btn_text}>Друзья</Text>
-            </Pressable>
             <Pressable style={styles.btn} onPress={() => navigation.navigate('Memory_list')}>
             <Text style={styles.btn_text}>Мои воспомианания</Text>
             </Pressable>
+            <Pressable style={styles.btn} onPress={() => navigation.navigate('Friends_page')}>
+            <Text style={styles.btn_text}>Друзья</Text>
+            </Pressable>
         </View>
 
-            <Pressable style={styles.btn_exit} onPress={() => navigation.navigate('Sign_in')}>
+            <Pressable style={styles.btn_exit} onPress={() => navigation.navigate('exempl')}>
             <Text style={styles.btn_text_exit}>Выйти</Text>
             </Pressable>
         </View>
@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 844,
+    height: '100%',
+    width: '100%',
   }, 
   body:{
     zIndex: 1,
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
   },
   rec_one:{
     height: 374,
-    width:390,
+    width:393,
     marginTop: 0,
     backgroundColor:"#06648E",
     borderBottomLeftRadius: 40,

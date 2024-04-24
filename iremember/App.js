@@ -1,7 +1,7 @@
-
-import { StyleSheet, Text, View } from 'react-native';
-
+import * as React from 'react';
+import { Button, View } from 'react-native';
 import MainStackNavigator from './navigation/MainStackNavigator'
+
 
 export default function App() {
   return (
@@ -10,12 +10,3 @@ export default function App() {
     </MainStackNavigator>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

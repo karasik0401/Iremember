@@ -71,7 +71,7 @@ function Sign_up({navigation}) {
             />
             <View style={styles.btnContainer}>
             <LinearGradient colors={['#1092A9','#0E6F8B' ]} style={styles.btn}>
-          <Pressable  onPress={() => navigation.navigate('Home_page')}>
+          <Pressable  onPress={() => navigation.navigate('Root', { screen: 'Home_page' })}>
             <Text style={styles.btn_text}>Зарегистрироваться</Text>
           </Pressable>
         </LinearGradient>
