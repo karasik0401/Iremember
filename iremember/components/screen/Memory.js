@@ -1,7 +1,7 @@
 import {
   StyleSheet,
   Text,
-  View, ScrollView, Image, Button,FlatList, Alert, TextInput, Pressable, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard
+  View, ScrollView, Modal, Image, Button,FlatList, Alert, TextInput, Pressable, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard
 } from 'react-native';
 import React from 'react';
 import { Stack, IconButton } from "@react-native-material/core";
@@ -27,7 +27,7 @@ function Memory({ navigation }) {
               <ScrollView showsVerticalScrollIndicator={false} style={styles.body}>
 
               <Memory_post/>
-              <Memory_post/>
+              <Memory_post/>  
               <Memory_post/>
             </ScrollView>
             
@@ -35,10 +35,7 @@ function Memory({ navigation }) {
             <KeyboardAvoidingView behavior="padding" style={styles.screen}>
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                     <View style={styles.footer}> 
-                      <Pressable style={styles.btn} >
-                        <Text style={styles.btn_text}>Редактировать</Text>
-                      </Pressable>
-                    
+                      <IconButton style={styles.btn} onPress={() => navigation.navigate('AddMemoryPost')} icon={props => <Icon  name="plus" {...props} size={36} color="#fff"/>} />
                     </View>
                 </TouchableWithoutFeedback>
             </KeyboardAvoidingView>
@@ -117,8 +114,8 @@ const styles = StyleSheet.create({
       },
 
       btn:{
-        width: 183,
-        height: 32,
+        width: 45,
+        height: 45,
         backgroundColor: "#06648E",
         borderRadius: 28,
         alignSelf: 'center',

@@ -55,7 +55,7 @@ function Profile({ navigation }) {
             </Pressable>
         </View>
 
-            <Pressable style={styles.btn_exit} onPress={() => navigation.navigate('exempl')}>
+            <Pressable style={styles.btn_exit} onPress={() => navigation.navigate('Sign_in')}>
             <Text style={styles.btn_text_exit}>Выйти</Text>
             </Pressable>
         </View>

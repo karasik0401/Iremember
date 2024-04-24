@@ -7,7 +7,7 @@ import Memory_card from "./Memory_card";
 const { height } = Dimensions.get("screen");
 const modalHeight = height * 0.723;
 
-const BottomSheet = ({ modalRef, onClose }) => {
+const BottomSheet = ({ modalRef, navigation}) => {
   return (
     <Portal>
       <Modalize style={styles.content} ref={modalRef} modalHeight={modalHeight}>
@@ -17,13 +17,13 @@ const BottomSheet = ({ modalRef, onClose }) => {
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Memory')}>
-                <Memory_card/>
+                <Memory_card navigation={navigation}/>
               </TouchableOpacity>
               <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Memory')}>
-                <Memory_card/>
+                <Memory_card navigation={navigation}/>
               </TouchableOpacity>
               <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Memory')}>
-                <Memory_card/>
+                <Memory_card navigation={navigation}/>
               </TouchableOpacity>
               </ScrollView>
       </Modalize>

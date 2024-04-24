@@ -16,6 +16,8 @@ import Friends_page from "../components/screen/Friends_page"
 import { Icon } from '@react-native-material/core';
 import Btn from '../components/widget/Btn';
 import AddMemory from '../components/screen/AddMemory';
+import AddFriends from '../components/widget/AddFriends';
+import AddMemoryPost from '../components/screen/AddMemoryPost';
 
 
 const Stack = createStackNavigator()
@@ -120,6 +122,22 @@ function MainStackNavigator() {
         <Stack.Screen
           name='AddMemory'
           component={AddMemory}
+          options={{title: ' ',
+          headerShown: false,
+          headerLeft: () => null,}}
+        />
+
+        <Stack.Screen
+          name='AddFriends'
+          component={AddFriends}
+          options={{title: ' ',
+          headerShown: false,
+          headerLeft: () => null,}}
+        />
+
+        <Stack.Screen
+          name='AddMemoryPost'
+          component={AddMemoryPost}
           options={{title: ' ',
           headerShown: false,
           headerLeft: () => null,}}
